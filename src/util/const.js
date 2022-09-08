@@ -1,0 +1,1 @@
+export const BASE_URL = "https://lws-assignment4.herokuapp.com/api";
