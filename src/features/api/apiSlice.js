@@ -7,8 +7,10 @@ export const apiSlice = createApi({
         baseUrl: BASE_URL,
     }),
     endpoints: (builder) => ({
+        // Get Todos
         getTodos: builder.query({
-            query: () => '/todos'
+            query: () => '/todos',
+            keepUnusedDataFor: 10 //This API will call after 10 Second Inactivity
         })
     })
 

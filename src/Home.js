@@ -1,8 +1,14 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { useGetTodosQuery } from './features/api/apiSlice';
+
+
 const Home = () => {
-    const { data: todos, isLoading } = useGetTodosQuery()
+    const { data: todos, isLoading } = useGetTodosQuery(undefined, {
+        refetchOnReconnect: true //Default false 
+    })
+
+
     let content = null;
     if (isLoading) {
         content = <p>Loading...........</p>
